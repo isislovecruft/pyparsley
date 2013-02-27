@@ -1,3 +1,4 @@
+AC_CONFIG_MACRO_DIR([m4])
 AC_PREREQ(2.59)
 
 AC_INIT([parsleyc], [1.0], [kyle@kylemaxwell.com])
