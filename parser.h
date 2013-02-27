@@ -1,23 +1,21 @@
-/* A Bison parser, made by GNU Bison 2.3.  */
+/* A Bison parser, made by GNU Bison 2.5.  */
 
 /* Skeleton interface for Bison GLR parsers in C
-
-   Copyright (C) 2002, 2003, 2004, 2005, 2006 Free Software Foundation, Inc.
-
-   This program is free software; you can redistribute it and/or modify
+   
+      Copyright (C) 2002-2011 Free Software Foundation, Inc.
+   
+   This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
-   the Free Software Foundation; either version 2, or (at your option)
-   any later version.
-
+   the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+   
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
    GNU General Public License for more details.
-
+   
    You should have received a copy of the GNU General Public License
-   along with this program; if not, write to the Free Software
-   Foundation, Inc., 51 Franklin Street, Fifth Floor,
-   Boston, MA 02110-1301, USA.  */
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 
 /* As a special exception, you may create a larger work that contains
    part or all of the Bison parser skeleton and distribute that work
@@ -28,9 +26,10 @@
    special exception, which will cause the skeleton and the resulting
    Bison output files to be licensed under the GNU General Public
    License without this special exception.
-
+   
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
+
 
 /* Tokens.  */
 #ifndef YYTOKENTYPE
@@ -140,68 +139,22 @@
 #endif
 
 
-/* Copy the first part of user declarations.  */
-#line 1 "parser.y"
-
-#include <math.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "parsed_xpath.h"
-#include <libxml/hash.h>
-
-#ifndef PARSER_Y_H_INCLUDED
-#define PARSER_Y_H_INCLUDED
-
-static pxpathPtr parsed_answer;
-
-int yylex (void);
-void yyerror (char const *);
-
-void prepare_parse(char*);
-void cleanup_parse(void);
-void start_debugging(void);
-
-static xmlHashTablePtr alias_hash;
-
-char* xpath_alias(char*);
-void init_xpath_alias();
-
-int yyparse(void);
-pxpathPtr myparse(char*);
-void answer(pxpathPtr);
-
-#define LIT_BIN_OP(A, B, C)           pxpath_cat_literals(3, A, LIT(B), C)
-#define BIN_OP(A, B, C)               pxpath_cat_paths(3, A, OP(B), C)
-#define PREP_OP(A, B)                 pxpath_cat_paths(2, OP(A), B)
-#define PXP(A)                        pxpath_new_path(1, A)
-#define LIT(A)                        pxpath_new_literal(1, A)
-#define OP(A)   	                    pxpath_new_operator(1, A)
-#define APPEND(A, S)                  pxpath_cat_paths(2, A, PXP(S)); 
-#define PREPEND(A, S)                 pxpath_cat_paths(2, PXP(S), A); 
-#define PXPWRAP(A, B, C)              pxpath_cat_paths(3, PXP(A), B, PXP(C))
-#define P4E(A, B, C, D)               pxpath_cat_paths(4, A, PXP(B), C, PXP(D))
-#define P4O(A, B, C, D)               pxpath_cat_paths(4, PXP(A), B, PXP(C), D)
-#define P6E(A, B, C, D, E, F)         pxpath_cat_paths(6, A, PXP(B), C, PXP(D), E, PXP(F));
-#define INPUT_TYPE(A, S)              APPEND(A, "[lower-case(name())='input' and lower-case(@type)='" #S "']")
-#define TRACE(A, B)                   fprintf(stderr, "trace(%s): ", A); fprintf(stderr, "%s\n", pxpath_to_string(B));
-
-#endif
-  
-
-
-#if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-typedef union YYSTYPE 
-#line 53 "parser.y"
+#ifndef YYSTYPE
+typedef union YYSTYPE
 {
+
+/* Line 2663 of glr.c  */
+#line 54 "parser.y"
+
   int empty;
 	char* string;
   pxpathPtr node;
-}
-/* Line 2616 of glr.c.  */
-#line 203 "parser.h"
-	YYSTYPE;
-# define YYSTYPE_IS_DECLARED 1
+
+
+
+/* Line 2663 of glr.c  */
+#line 157 "parser.h"
+} YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 #endif
 
@@ -215,6 +168,7 @@ typedef struct YYLTYPE
 # define YYLTYPE_IS_DECLARED 1
 # define YYLTYPE_IS_TRIVIAL 1
 #endif
+
 
 
 extern YYSTYPE yylval;
