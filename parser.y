@@ -5,10 +5,11 @@
 #include <string.h>
 #include "parsed_xpath.h"
 #include <libxml/hash.h>
-
+#include "parser.h"
+    
 #ifndef PARSER_Y_H_INCLUDED
 #define PARSER_Y_H_INCLUDED
-
+    
 static pxpathPtr parsed_answer;
 
 int yylex (void);
