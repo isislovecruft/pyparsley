@@ -4,7 +4,7 @@ Python 2.x bindings for Parsley, an implementation of OMeta, an object-oriented 
 
 ## INSTALLATION ##
 
-### Get Parsley and Dependencies ### 
+### Get Parsley and Dependencies ###
 Download Parsley from https://github.com/isislovecruft/parsley.git
 
 Parsley requires libxml2:
@@ -18,7 +18,7 @@ For Python 2.5, the simplejson library is required.  For Python 2.6 and later, t
     $ sudo python setup.py install
 
 ### Example Code ###
-
+```
   from pyparsley import PyParsley
 
   # Valid options (all are named arguments):
@@ -48,3 +48,4 @@ For Python 2.5, the simplejson library is required.  For Python 2.6 and later, t
   json_string = parselet.parse(file = some_file, output = "json")
   # Using Parsley's builtin URI fetching.
   json_string = parselet.parse(file = "http://www.example.com/", output = "json")
+```
