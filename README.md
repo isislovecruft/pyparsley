@@ -15,7 +15,29 @@ For Python 2.5, the simplejson library is required.  For Python 2.6 and later, t
 
 ### Install pyparsely ###
 
-    $ sudo python setup.py install
+#### Debian/Ubuntu ####
+-----------------------
+
+```
+sudo apt-get install libxslt1-dev libpcre3-dev build-essential shtool libtool bison flex wget
+wget http://oss.metaparadigm.com/json-c/json-c-0.8.tar.gz
+tar -zxf json-c-0.8.tar.gz
+cd json-c-0.8
+./configure
+make
+sudo make install
+cd ..
+cp /usr/share/shtool/sh.install ./install.sh
+cp /usr/share/libtool/install-sh ./
+cp /usr/share/libtool/ltmain.sh ./
+cp /usr/share/automake-*/depcomp ./
+cp /usr/share/automake-*/ylwrap ./
+touch missing
+./configure
+make
+sudo make install
+sudo python setup.py install
+```
 
 ### Example Code ###
 ```

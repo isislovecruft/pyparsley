@@ -28,14 +28,20 @@ just made) and, based on your platform, do the following:
 
 Debian/Ubuntu
 ------------------------------------------------------------------------
-sudo apt-get install libxslt1-dev libpcre3-dev build-essential wget
+sudo apt-get install libxslt1-dev libpcre3-dev build-essential shtool libtool bison flex wget
 wget http://oss.metaparadigm.com/json-c/json-c-0.8.tar.gz
 tar -zxf json-c-0.8.tar.gz
 cd json-c-0.8
 ./configure
 make
 sudo make install
-cd -
+cd ..
+cp /usr/share/shtool/sh.install ./install.sh
+cp /usr/share/libtool/install-sh ./
+cp /usr/share/libtool/ltmain.sh ./
+cp /usr/share/automake-*/depcomp ./
+cp /usr/share/automake-*/ylwrap ./
+touch missing
 ./configure
 make
 sudo make install
