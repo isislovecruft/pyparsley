@@ -1,20 +1,23 @@
-ABOUT
+# Parsley #
+===========
+Python 2.x bindings for Parsley, an implementation of OMeta, an object-oriented parsing language. Tested with Python 2.5, 2.6, and 2.7.
 
-Python 2.x bindings for Parsley.  Tested with Python 2.5 and 2.6.
+## INSTALLATION ##
 
-INSTALLATION
+### Get Parsley and Dependencies ### 
+Download Parsley from https://github.com/isislovecruft/parsley.git
 
-= Get Parsley and Dependancies = 
+Parsley requires libxml2:
 
-Download Parsley from http://github.com/fizx/parsley/tree/master following the installation directions located at http://github.com/fizx/parsley/blob/master/INSTALL
+    $ sudo apt-get install libxml2-dev libxslt1-dev
 
 For Python 2.5, the simplejson library is required.  For Python 2.6 and later, the stdlib json library is used.	
 
-= Install pyparsely =
+### Install pyparsely ###
 
-sudo python setup.py install
+    $ sudo python setup.py install
 
-= Example Code =
+### Example Code ###
 
   from pyparsley import PyParsley
 
